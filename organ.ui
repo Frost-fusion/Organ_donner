@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="home_tab">
        <attribute name="title">
@@ -140,7 +140,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="1" column="2" colspan="2">
-         <widget class="QLineEdit" name="passwrd"/>
+         <widget class="QLineEdit" name="usr_pass"/>
         </item>
         <item row="3" column="4">
          <spacer name="horizontalSpacer_3">
@@ -154,6 +154,20 @@ p, li { white-space: pre-wrap; }
            </size>
           </property>
          </spacer>
+        </item>
+        <item row="0" column="4">
+         <widget class="QLabel" name="usr_name1">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QLabel" name="usr_pass1">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
