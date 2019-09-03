@@ -16,17 +16,17 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="mainTab">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="home_tab">
+      <widget class="QWidget" name="homeTab">
        <attribute name="title">
         <string>&amp;Home</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
         <item row="1" column="2">
-         <spacer name="horizontalSpacer_2">
+         <spacer name="registerButtonRightSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -39,14 +39,14 @@
          </spacer>
         </item>
         <item row="1" column="1">
-         <widget class="QPushButton" name="reg">
+         <widget class="QPushButton" name="homeTabRegisterButton">
           <property name="text">
            <string>Register</string>
           </property>
          </widget>
         </item>
         <item row="1" column="0">
-         <spacer name="horizontalSpacer">
+         <spacer name="registerButtonLeftSpacer">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
@@ -72,7 +72,7 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="register_tab">
+      <widget class="QWidget" name="registerTab">
        <attribute name="title">
         <string>&amp;Register</string>
        </attribute>
@@ -85,7 +85,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="2" column="1" colspan="2">
-         <widget class="QLabel" name="label_5">
+         <widget class="QLabel" name="registerTabDateLabel">
           <property name="text">
            <string>Date of Birth:</string>
           </property>
@@ -95,7 +95,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QComboBox" name="addState"/>
         </item>
         <item row="4" column="1">
-         <widget class="QLabel" name="label_7">
+         <widget class="QLabel" name="registerTabBloodGroupLabel">
           <property name="text">
            <string>Blood Group:</string>
           </property>
@@ -109,7 +109,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="9" column="1">
-         <widget class="QLabel" name="label_16">
+         <widget class="QLabel" name="registerTabCityLabel">
           <property name="text">
            <string>City:       </string>
           </property>
@@ -119,7 +119,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="11" column="3">
-         <widget class="QLineEdit" name="addDist"/>
+         <widget class="QLineEdit" name="addDistrict"/>
         </item>
         <item row="1" column="5" colspan="2">
          <widget class="QLineEdit" name="lastName"/>
@@ -128,10 +128,10 @@ p, li { white-space: pre-wrap; }
          <widget class="QLineEdit" name="middleName"/>
         </item>
         <item row="2" column="3">
-         <widget class="QDateEdit" name="dob"/>
+         <widget class="QDateEdit" name="dateOfBirth"/>
         </item>
         <item row="1" column="1" colspan="2">
-         <widget class="QLabel" name="donar_name_label">
+         <widget class="QLabel" name="registerTabNameLabel">
           <property name="text">
            <string>Name of Doner:</string>
           </property>
@@ -145,28 +145,28 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="6" column="1">
-         <widget class="QLabel" name="label_22">
+         <widget class="QLabel" name="registerTabEmailLabel">
           <property name="text">
            <string>Email Id:</string>
           </property>
          </widget>
         </item>
         <item row="5" column="1">
-         <widget class="QLabel" name="label_10">
+         <widget class="QLabel" name="registerTabMobileLabel">
           <property name="text">
            <string>Mobile No.:</string>
           </property>
          </widget>
         </item>
         <item row="5" column="4">
-         <widget class="QLabel" name="label_11">
+         <widget class="QLabel" name="registerTabLandlineLabel">
           <property name="text">
            <string>LandLine No.:</string>
           </property>
          </widget>
         </item>
         <item row="5" column="0">
-         <widget class="QLabel" name="label_9">
+         <widget class="QLabel" name="registerTabContactLabel">
           <property name="text">
            <string>Contact Details:</string>
           </property>
@@ -176,24 +176,24 @@ p, li { white-space: pre-wrap; }
          <widget class="QLineEdit" name="email"/>
         </item>
         <item row="11" column="5" colspan="2">
-         <widget class="QLineEdit" name="addPin"/>
+         <widget class="QLineEdit" name="addPincode"/>
         </item>
         <item row="7" column="1">
-         <widget class="QLabel" name="label_12">
+         <widget class="QLabel" name="registerTabAddressLabel">
           <property name="text">
            <string>Permanent Address:</string>
           </property>
          </widget>
         </item>
         <item row="11" column="4">
-         <widget class="QLabel" name="label_17">
+         <widget class="QLabel" name="registerTabPincodeLabel">
           <property name="text">
            <string>Pin Code:</string>
           </property>
          </widget>
         </item>
         <item row="7" column="3" colspan="2">
-         <widget class="QPlainTextEdit" name="permanentAdd">
+         <widget class="QPlainTextEdit" name="permanantAddress">
           <property name="maximumSize">
            <size>
             <width>16777215</width>
@@ -210,70 +210,70 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="18" column="0" colspan="7">
-         <widget class="QStackedWidget" name="stackedWidget">
+         <widget class="QStackedWidget" name="changeFormStack">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
-          <widget class="QWidget" name="donerOrgan">
+          <widget class="QWidget" name="donorOrganForm">
            <layout class="QGridLayout" name="gridLayout_7">
             <item row="3" column="1">
-             <widget class="QCheckBox" name="checkBox_4">
+             <widget class="QCheckBox" name="donateHeart">
               <property name="text">
                <string>Heart</string>
               </property>
              </widget>
             </item>
             <item row="4" column="1">
-             <widget class="QCheckBox" name="checkBox_7">
+             <widget class="QCheckBox" name="donateLiver">
               <property name="text">
                <string>Liver</string>
               </property>
              </widget>
             </item>
             <item row="2" column="1">
-             <widget class="QCheckBox" name="checkBox_5">
+             <widget class="QCheckBox" name="donateKidney">
               <property name="text">
                <string>Kidney</string>
               </property>
              </widget>
             </item>
             <item row="2" column="2">
-             <widget class="QCheckBox" name="checkBox_6">
+             <widget class="QCheckBox" name="donatePancreas">
               <property name="text">
                <string>Pancreas</string>
               </property>
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QLabel" name="label_23">
+             <widget class="QLabel" name="donarLabelBody">
               <property name="text">
                <string>Organs willed to Donate:</string>
               </property>
              </widget>
             </item>
             <item row="3" column="2">
-             <widget class="QCheckBox" name="checkBox_2">
+             <widget class="QCheckBox" name="donateEyes">
               <property name="text">
                <string>Eyes</string>
               </property>
              </widget>
             </item>
             <item row="4" column="2">
-             <widget class="QCheckBox" name="checkBox_3">
+             <widget class="QCheckBox" name="donateLungs">
               <property name="text">
                <string>Lungs</string>
               </property>
              </widget>
             </item>
             <item row="0" column="1" colspan="2">
-             <widget class="QCheckBox" name="checkBox">
+             <widget class="QCheckBox" name="donateBody">
               <property name="text">
                <string>Everything that can save a life</string>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLabel" name="label_24">
+             <widget class="QLabel" name="donarLabelOr">
               <property name="text">
                <string>or</string>
               </property>
@@ -281,18 +281,13 @@ p, li { white-space: pre-wrap; }
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="patientOrgan">
+          <widget class="QWidget" name="patientOrganForm">
            <layout class="QGridLayout" name="gridLayout_8">
             <item row="1" column="3">
-             <widget class="QLineEdit" name="docReg"/>
+             <widget class="QLineEdit" name="doctorRegistration"/>
             </item>
             <item row="2" column="1">
              <widget class="QComboBox" name="IllnessStage">
-              <item>
-               <property name="text">
-                <string>Hospitilized</string>
-               </property>
-              </item>
               <item>
                <property name="text">
                 <string>Stage 1</string>
@@ -303,38 +298,43 @@ p, li { white-space: pre-wrap; }
                 <string>Satge 2</string>
                </property>
               </item>
+              <item>
+               <property name="text">
+                <string>Hospitilized</string>
+               </property>
+              </item>
              </widget>
             </item>
             <item row="2" column="0">
-             <widget class="QLabel" name="label_13">
+             <widget class="QLabel" name="patientFormStageLabel">
               <property name="text">
                <string>Stage of illness:</string>
               </property>
              </widget>
             </item>
             <item row="2" column="2">
-             <widget class="QLabel" name="label_18">
+             <widget class="QLabel" name="patienFormPriorityLabel">
               <property name="text">
                <string>Priority of patient</string>
               </property>
              </widget>
             </item>
             <item row="1" column="2">
-             <widget class="QLabel" name="label_4">
+             <widget class="QLabel" name="patientFormDoctorLabel">
               <property name="text">
                <string>Doctor reg no.:</string>
               </property>
              </widget>
             </item>
             <item row="0" column="0">
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="patientFormDiseaselabel">
               <property name="text">
                <string>Disease of the patient:</string>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
-             <widget class="QLabel" name="label_2">
+             <widget class="QLabel" name="patientFormMedicalLabel">
               <property name="text">
                <string>Examining Medical Consultant:</string>
               </property>
@@ -360,17 +360,17 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QLineEdit" name="docName"/>
+             <widget class="QLineEdit" name="doctorName"/>
             </item>
             <item row="3" column="0">
-             <widget class="QLabel" name="label_19">
+             <widget class="QLabel" name="patientFormTransplantLabel">
               <property name="text">
                <string>Organ required to be transplanted:</string>
               </property>
              </widget>
             </item>
             <item row="3" column="1">
-             <widget class="QComboBox" name="comboBox_3">
+             <widget class="QComboBox" name="transplantOrgan">
               <item>
                <property name="text">
                 <string>Heart</string>
@@ -401,14 +401,14 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="0" column="3">
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="registerTabFormSelecterLabel">
           <property name="text">
            <string>Form to be filled by:</string>
           </property>
          </widget>
         </item>
         <item row="11" column="1">
-         <widget class="QLabel" name="label_15">
+         <widget class="QLabel" name="registerTabDistrictLabel">
           <property name="text">
            <string>District:</string>
           </property>
@@ -421,7 +421,7 @@ p, li { white-space: pre-wrap; }
          <widget class="QLineEdit" name="addCity"/>
         </item>
         <item row="4" column="3">
-         <widget class="QComboBox" name="comboBox_2">
+         <widget class="QComboBox" name="bloodGroup">
           <item>
            <property name="text">
             <string>A</string>
@@ -445,24 +445,24 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="5" column="3">
-         <widget class="QLineEdit" name="mobileNo"/>
+         <widget class="QLineEdit" name="mobileNumber"/>
         </item>
         <item row="1" column="0">
-         <widget class="QLabel" name="label_8">
+         <widget class="QLabel" name="registerTabPersonalLabel">
           <property name="text">
            <string>Personal Details:</string>
           </property>
          </widget>
         </item>
         <item row="9" column="4">
-         <widget class="QLabel" name="label_14">
+         <widget class="QLabel" name="registerTabStateLabel">
           <property name="text">
            <string>State:</string>
           </property>
          </widget>
         </item>
         <item row="0" column="4">
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="formSelecter">
           <item>
            <property name="text">
             <string>Doner</string>
@@ -486,17 +486,17 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="3" column="1">
-         <widget class="QLabel" name="label_6">
+         <widget class="QLabel" name="registerTabGenderLabel">
           <property name="text">
            <string>Gender:</string>
           </property>
          </widget>
         </item>
         <item row="5" column="5" colspan="2">
-         <widget class="QLineEdit" name="landLine"/>
+         <widget class="QLineEdit" name="landLineNumber"/>
         </item>
         <item row="19" column="2" colspan="2">
-         <widget class="QPushButton" name="pushButton_6">
+         <widget class="QPushButton" name="registerTabRegisterButton">
           <property name="text">
            <string>Register</string>
           </property>
@@ -504,13 +504,13 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="login_tab">
+      <widget class="QWidget" name="loginTab">
        <attribute name="title">
         <string>&amp;Login</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
         <item row="0" column="0">
-         <widget class="QStackedWidget" name="stackedWidget_2">
+         <widget class="QStackedWidget" name="changeLoginTypeStack">
           <property name="enabled">
            <bool>true</bool>
           </property>
@@ -519,25 +519,49 @@ p, li { white-space: pre-wrap; }
           </property>
           <widget class="QWidget" name="loginWindow">
            <layout class="QGridLayout" name="gridLayout_6">
-            <item row="0" column="1">
-             <widget class="QLabel" name="usr_name_">
+            <item row="2" column="2">
+             <widget class="QPushButton" name="loginButton">
               <property name="text">
-               <string>User Name:</string>
+               <string>Login</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="2" colspan="2">
-             <widget class="QLineEdit" name="usr_name"/>
+            <item row="1" column="1">
+             <widget class="QLabel" name="userPasswordLabel">
+              <property name="text">
+               <string>Password:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="4">
+             <spacer name="loginStackRightSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>217</width>
+                <height>14</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLabel" name="statusPasswordLabel">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
             </item>
             <item row="0" column="4">
-             <widget class="QLabel" name="usr_name1">
+             <widget class="QLabel" name="statusNameLabel">
               <property name="text">
                <string/>
               </property>
              </widget>
             </item>
             <item row="1" column="0">
-             <spacer name="horizontalSpacer_4">
+             <spacer name="LoginStackLeftSpacer">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
@@ -549,49 +573,12 @@ p, li { white-space: pre-wrap; }
               </property>
              </spacer>
             </item>
-            <item row="1" column="1">
-             <widget class="QLabel" name="usr_pass_">
+            <item row="0" column="1">
+             <widget class="QLabel" name="userNameLabel">
               <property name="text">
-               <string>Password:</string>
+               <string>User Name:</string>
               </property>
              </widget>
-            </item>
-            <item row="1" column="2" colspan="2">
-             <widget class="QLineEdit" name="usr_pass"/>
-            </item>
-            <item row="1" column="4">
-             <widget class="QLabel" name="usr_pass1">
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="2">
-             <widget class="QPushButton" name="log">
-              <property name="text">
-               <string>Login</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="3">
-             <widget class="QPushButton" name="forget_pass">
-              <property name="text">
-               <string>Forgot Password</string>
-              </property>
-             </widget>
-            </item>
-            <item row="2" column="4">
-             <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>217</width>
-                <height>14</height>
-               </size>
-              </property>
-             </spacer>
             </item>
             <item row="3" column="2">
              <spacer name="verticalSpacer">
@@ -606,9 +593,22 @@ p, li { white-space: pre-wrap; }
               </property>
              </spacer>
             </item>
+            <item row="2" column="3">
+             <widget class="QPushButton" name="forgotPasswordButton">
+              <property name="text">
+               <string>Forgot Password</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" colspan="2">
+             <widget class="QLineEdit" name="userName"/>
+            </item>
+            <item row="1" column="2" colspan="2">
+             <widget class="QLineEdit" name="userPassword"/>
+            </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="adminLog">
+          <widget class="QWidget" name="adminLoginStack">
            <layout class="QGridLayout" name="gridLayout_9">
             <item row="0" column="0">
              <widget class="QLabel" name="label_20">
@@ -853,7 +853,7 @@ p, li { white-space: pre-wrap; }
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="page_8">
+          <widget class="QWidget" name="donorLoginStack">
            <layout class="QGridLayout" name="gridLayout_10">
             <item row="1" column="0">
              <widget class="Line" name="line_2">
@@ -886,7 +886,7 @@ p, li { white-space: pre-wrap; }
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="page_9">
+          <widget class="QWidget" name="reciverLoginStack">
            <layout class="QGridLayout" name="gridLayout_11">
             <item row="0" column="0">
              <widget class="QLabel" name="label_25">
@@ -928,13 +928,13 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="about_tab">
+      <widget class="QWidget" name="aboutTab">
        <attribute name="title">
         <string>&amp;About</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
-         <widget class="QTextBrowser" name="textBrowser_2">
+         <widget class="QTextBrowser" name="applicationInformation">
           <property name="html">
            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -954,33 +954,33 @@ p, li { white-space: pre-wrap; }
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <tabstops>
-  <tabstop>reg</tabstop>
+  <tabstop>homeTabRegisterButton</tabstop>
   <tabstop>textBrowser</tabstop>
-  <tabstop>comboBox</tabstop>
+  <tabstop>formSelecter</tabstop>
   <tabstop>fristName</tabstop>
   <tabstop>middleName</tabstop>
   <tabstop>lastName</tabstop>
-  <tabstop>dob</tabstop>
+  <tabstop>dateOfBirth</tabstop>
   <tabstop>radioFemale</tabstop>
   <tabstop>radioMale</tabstop>
   <tabstop>radioOther</tabstop>
-  <tabstop>comboBox_2</tabstop>
-  <tabstop>mobileNo</tabstop>
-  <tabstop>landLine</tabstop>
+  <tabstop>bloodGroup</tabstop>
+  <tabstop>mobileNumber</tabstop>
+  <tabstop>landLineNumber</tabstop>
   <tabstop>email</tabstop>
-  <tabstop>permanentAdd</tabstop>
+  <tabstop>permanantAddress</tabstop>
   <tabstop>addCity</tabstop>
   <tabstop>addState</tabstop>
-  <tabstop>addDist</tabstop>
-  <tabstop>addPin</tabstop>
-  <tabstop>checkBox</tabstop>
-  <tabstop>checkBox_5</tabstop>
-  <tabstop>checkBox_6</tabstop>
-  <tabstop>checkBox_4</tabstop>
-  <tabstop>checkBox_2</tabstop>
-  <tabstop>checkBox_7</tabstop>
-  <tabstop>checkBox_3</tabstop>
-  <tabstop>textBrowser_2</tabstop>
+  <tabstop>addDistrict</tabstop>
+  <tabstop>addPincode</tabstop>
+  <tabstop>donateBody</tabstop>
+  <tabstop>donateKidney</tabstop>
+  <tabstop>donatePancreas</tabstop>
+  <tabstop>donateHeart</tabstop>
+  <tabstop>donateEyes</tabstop>
+  <tabstop>donateLiver</tabstop>
+  <tabstop>donateLungs</tabstop>
+  <tabstop>applicationInformation</tabstop>
  </tabstops>
  <resources/>
  <connections/>
