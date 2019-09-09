@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>760</width>
-    <height>621</height>
+    <width>837</width>
+    <height>607</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="mainTab">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="homeTab">
        <attribute name="title">
@@ -92,7 +92,158 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item row="9" column="5" colspan="2">
-         <widget class="QComboBox" name="addState"/>
+         <widget class="QComboBox" name="addState">
+          <item>
+           <property name="text">
+            <string>-</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Andhra Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Arunachal Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Assam</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Bihar</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Chhattisgarh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Goa</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Gujarat</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Haryana</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Himachal Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Jharkhand</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Karnataka</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kerala</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Madhya Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Maharashtra</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Manipur</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Meghalaya</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mizoram</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nagaland</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Odisha</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Punjab</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Rajasthan</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sikkm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Tamil Nadu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Telangana</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Tripura</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Uttar Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Uttarkhand</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>West Bengal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
         </item>
         <item row="4" column="1">
          <widget class="QLabel" name="registerTabBloodGroupLabel">
@@ -287,7 +438,12 @@ p, li { white-space: pre-wrap; }
              <widget class="QLineEdit" name="doctorRegistration"/>
             </item>
             <item row="2" column="1">
-             <widget class="QComboBox" name="IllnessStage">
+             <widget class="QComboBox" name="illnessStage">
+              <item>
+               <property name="text">
+                <string>-</string>
+               </property>
+              </item>
               <item>
                <property name="text">
                 <string>Stage 1</string>
@@ -295,7 +451,7 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <property name="text">
-                <string>Satge 2</string>
+                <string>Stage 2</string>
                </property>
               </item>
               <item>
@@ -341,10 +497,15 @@ p, li { white-space: pre-wrap; }
              </widget>
             </item>
             <item row="2" column="3">
-             <widget class="QComboBox" name="patientPrority">
+             <widget class="QComboBox" name="patientPriority">
               <item>
                <property name="text">
-                <string>Immediate</string>
+                <string>-</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>recommended</string>
                </property>
               </item>
               <item>
@@ -354,7 +515,7 @@ p, li { white-space: pre-wrap; }
               </item>
               <item>
                <property name="text">
-                <string>recommended</string>
+                <string>Immediate</string>
                </property>
               </item>
              </widget>
@@ -373,7 +534,22 @@ p, li { white-space: pre-wrap; }
              <widget class="QComboBox" name="transplantOrgan">
               <item>
                <property name="text">
+                <string>-</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
                 <string>Heart</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Lungs</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Liver</string>
                </property>
               </item>
               <item>
@@ -473,16 +649,6 @@ p, li { white-space: pre-wrap; }
             <string>Receiver</string>
            </property>
           </item>
-          <item>
-           <property name="text">
-            <string>Spouse of Doner</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Spouse of Receiver</string>
-           </property>
-          </item>
          </widget>
         </item>
         <item row="3" column="1">
@@ -502,6 +668,13 @@ p, li { white-space: pre-wrap; }
           </property>
          </widget>
         </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="renewApplicationButton">
+          <property name="text">
+           <string>New</string>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="loginTab">
@@ -509,13 +682,13 @@ p, li { white-space: pre-wrap; }
         <string>&amp;Login</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="0" column="0">
+        <item row="1" column="0">
          <widget class="QStackedWidget" name="changeLoginTypeStack">
           <property name="enabled">
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="loginWindow">
            <layout class="QGridLayout" name="gridLayout_6">
@@ -610,8 +783,15 @@ p, li { white-space: pre-wrap; }
           </widget>
           <widget class="QWidget" name="adminLoginStack">
            <layout class="QGridLayout" name="gridLayout_9">
+            <item row="4" column="0">
+             <widget class="QPushButton" name="goToLoginPageAdmin">
+              <property name="text">
+               <string>Log Out</string>
+              </property>
+             </widget>
+            </item>
             <item row="0" column="0">
-             <widget class="QLabel" name="label_20">
+             <widget class="QLabel" name="adminLoginStackLabel">
               <property name="text">
                <string>ADMINISTRATOR</string>
               </property>
@@ -620,51 +800,23 @@ p, li { white-space: pre-wrap; }
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="Line" name="line_4">
+            <item row="2" column="0">
+             <widget class="Line" name="adminLoginStacKLine">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
-             <widget class="QTabWidget" name="tabWidget_2">
+            <item row="1" column="0">
+             <widget class="QTabWidget" name="adminLoginStackTab">
               <property name="currentIndex">
-               <number>1</number>
+               <number>0</number>
               </property>
-              <widget class="QWidget" name="tab">
+              <widget class="QWidget" name="adminLoginStackMofifyTab">
                <attribute name="title">
                 <string>Modify Record</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_12">
-                <item row="0" column="3">
-                 <widget class="QPushButton" name="pushButton_5">
-                  <property name="text">
-                   <string>Verify Candidate</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QPushButton" name="pushButton_3">
-                  <property name="text">
-                   <string>Delete</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <widget class="QPushButton" name="pushButton_4">
-                  <property name="text">
-                   <string>Close</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QPushButton" name="pushButton_2">
-                  <property name="text">
-                   <string>Update</string>
-                  </property>
-                 </widget>
-                </item>
                 <item row="1" column="0">
                  <widget class="QLabel" name="label_26">
                   <property name="text">
@@ -675,62 +827,190 @@ p, li { white-space: pre-wrap; }
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="1">
-                 <widget class="QLineEdit" name="lineEdit">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
+                <item row="7" column="0">
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>Email Id:</string>
                   </property>
                  </widget>
                 </item>
-                <item row="1" column="2">
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>Name:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>Registration Number:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="9" column="1">
+                 <widget class="QPushButton" name="pushButton_3">
+                  <property name="text">
+                   <string>Delete</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>Gender:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QLabel" name="adminTabEmail">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>Mobile Number:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLabel" name="adminTabNumber">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QLabel" name="adminTabdob">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="1">
+                 <widget class="QComboBox" name="comboBox">
+                  <item>
+                   <property name="text">
+                    <string>-</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>recommended</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>waiting</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Immediate</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLabel" name="adminTabName">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="adminTabGender">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="label_6">
+                  <property name="text">
+                   <string>D.O.B.</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="adminTabRecordId">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="8" column="0">
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>Priority</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="3">
                  <widget class="QPushButton" name="pushButton">
                   <property name="text">
                    <string>Search</string>
                   </property>
                  </widget>
                 </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="lineEdit"/>
+                </item>
+                <item row="3" column="3">
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="9" column="3">
+                 <widget class="QPushButton" name="pushButton_2">
+                  <property name="text">
+                   <string>Update</string>
+                  </property>
+                 </widget>
+                </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="tab_2">
+              <widget class="QWidget" name="adminLoginStackListTab">
                <attribute name="title">
                 <string>List Record</string>
                </attribute>
                <layout class="QGridLayout" name="gridLayout_13">
-                <item row="2" column="0">
-                 <widget class="QLabel" name="label_28">
-                  <property name="text">
-                   <string>Reciver Data:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_27">
-                  <property name="text">
-                   <string>Donor Data:</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QTableWidget" name="tableWidget">
-                  <property name="rowCount">
-                   <number>5</number>
-                  </property>
-                  <row/>
-                  <row/>
-                  <row/>
-                  <row/>
-                  <row/>
+                <item row="3" column="0">
+                 <widget class="QTableWidget" name="adminLoginStackDonorTable">
                   <column>
                    <property name="text">
-                    <string>Record Id:</string>
+                    <string>REG No.</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Name</string>
+                    <string>Frist Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Middle Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Sur Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>D.O.B</string>
                    </property>
                   </column>
                   <column>
@@ -745,64 +1025,12 @@ p, li { white-space: pre-wrap; }
                   </column>
                   <column>
                    <property name="text">
-                    <string>Mob no.</string>
+                    <string>Mobile Number</string>
                    </property>
                   </column>
                   <column>
                    <property name="text">
-                    <string>Landline No.</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Email Id.</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Donating</string>
-                   </property>
-                  </column>
-                 </widget>
-                </item>
-                <item row="3" column="0">
-                 <widget class="QTableWidget" name="tableWidget_2">
-                  <property name="rowCount">
-                   <number>5</number>
-                  </property>
-                  <row/>
-                  <row/>
-                  <row/>
-                  <row/>
-                  <row/>
-                  <column>
-                   <property name="text">
-                    <string>Record Id</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Name</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Gender</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Blood Group</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>Mob No.</string>
-                   </property>
-                  </column>
-                  <column>
-                   <property name="text">
-                    <string>LandLine No.</string>
+                    <string>Landline Number</string>
                    </property>
                   </column>
                   <column>
@@ -817,6 +1045,129 @@ p, li { white-space: pre-wrap; }
                   </column>
                   <column>
                    <property name="text">
+                    <string>City</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>District</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>State</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>PinCode</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Pledge Date</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Donating</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="adminLoginStackReceiverLabel">
+                  <property name="text">
+                   <string>Receiver Data:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="adminLoginStackDonorLabel">
+                  <property name="text">
+                   <string>Donor Data:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QTableWidget" name="adminLoginStackReceiverTable">
+                  <column>
+                   <property name="text">
+                    <string>REG NO.</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Frist Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Middle Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Last Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>D.O.B</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Gender</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Blood Group</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Mobile Number</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>LandLine Number</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Email Id.</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Address</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>City</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>District</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>State</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Pincode</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
                     <string>Disease</string>
                    </property>
                   </column>
@@ -827,7 +1178,7 @@ p, li { white-space: pre-wrap; }
                   </column>
                   <column>
                    <property name="text">
-                    <string>Doctor Reg.</string>
+                    <string>Doctor REG.</string>
                    </property>
                   </column>
                   <column>
@@ -842,7 +1193,7 @@ p, li { white-space: pre-wrap; }
                   </column>
                   <column>
                    <property name="text">
-                    <string>Organ</string>
+                    <string>Transplant Organ</string>
                    </property>
                   </column>
                  </widget>
@@ -855,7 +1206,7 @@ p, li { white-space: pre-wrap; }
           </widget>
           <widget class="QWidget" name="donorLoginStack">
            <layout class="QGridLayout" name="gridLayout_10">
-            <item row="1" column="0">
+            <item row="2" column="0">
              <widget class="Line" name="line_2">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -872,23 +1223,71 @@ p, li { white-space: pre-wrap; }
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
-             <widget class="QTabWidget" name="tabWidget_3">
-              <property name="currentIndex">
-               <number>0</number>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="goToLoginPageDonor">
+              <property name="text">
+               <string>Log out</string>
               </property>
-              <widget class="QWidget" name="tab_3">
-               <attribute name="title">
-                <string>Update Details</string>
-               </attribute>
-              </widget>
              </widget>
             </item>
            </layout>
           </widget>
           <widget class="QWidget" name="reciverLoginStack">
            <layout class="QGridLayout" name="gridLayout_11">
-            <item row="0" column="0">
+            <item row="3" column="2">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>Priority based Place In waiting List</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="4">
+             <widget class="Line" name="line">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="4">
+             <widget class="QTableWidget" name="receiverLoginStackTable">
+              <property name="gridStyle">
+               <enum>Qt::SolidLine</enum>
+              </property>
+              <column>
+               <property name="text">
+                <string>Registration Number</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Organ to be Transplanted</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Priority</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Blood Group</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Medical Assistant</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Actual Place In  Waiting List: </string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="4">
              <widget class="QLabel" name="label_25">
               <property name="text">
                <string>RECEIVER</string>
@@ -898,27 +1297,16 @@ p, li { white-space: pre-wrap; }
               </property>
              </widget>
             </item>
-            <item row="2" column="0">
-             <widget class="QTabWidget" name="tabWidget_4">
-              <property name="currentIndex">
-               <number>0</number>
-              </property>
-              <widget class="QWidget" name="tab_6">
-               <attribute name="title">
-                <string>Check Name in Waiting List </string>
-               </attribute>
-               <layout class="QGridLayout" name="gridLayout_14">
-                <item row="0" column="0">
-                 <widget class="QTableWidget" name="tableWidget_3"/>
-                </item>
-               </layout>
-              </widget>
-             </widget>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="lineEdit_2"/>
             </item>
-            <item row="1" column="0">
-             <widget class="Line" name="line">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+            <item row="3" column="3">
+             <widget class="QLineEdit" name="lineEdit_3"/>
+            </item>
+            <item row="4" column="0" colspan="4">
+             <widget class="QPushButton" name="goToLoginPageReceiver">
+              <property name="text">
+               <string>Log out</string>
               </property>
              </widget>
             </item>
