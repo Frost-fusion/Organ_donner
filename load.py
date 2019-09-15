@@ -3,13 +3,9 @@ import re
 import sqlite3
 import sys
 
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox, QVBoxLayout
 from PyQt5 import QtWidgets, uic
 
-
-def password_reset():
-    test = forgot()
-    test.show()
 
 class Test:
     cursor: sqlite3.Cursor
@@ -32,6 +28,9 @@ class Test:
         self.ui.goToLoginPageAdmin.clicked.connect(self.set_login_page)
         self.ui.forgotPasswordButton.clicked.connect(password_reset)
         self.ui.adminLoginStackTab.currentChanged.connect(self.populate_record)
+        self.ui.searchRecord.clicked.connect(self.admin_populate)
+        self.ui.deleteRecord.clicked.connect(delete_record)
+        self.ui.updateRecord.clicked.connect(update_record)
 
     def login(self):
         user_name: str
@@ -277,10 +276,6 @@ class Test:
         except Exception as e:
             print(e)
 
-    def __del__(self):
-        self.connection.commit()
-        self.connection.close()
-
     def renew_application(self):
         self.ui.fristName.clear()
         self.ui.middleName.clear()
@@ -307,6 +302,34 @@ class Test:
         self.ui.patientPriority.setCurrentIndex(0)
         self.ui.transplantOrgan.setCurrentIndex(0)
 
+    def admin_populate(self):
+        try:
+            if self.ui.adminRecordText.text() == '':
+                raise Exception("blackRecord")
+            else:
+                record = self.ui.adminRecordText.text()
+                if 'DON' in record:
+                    query = """SELECT firstName, middleName, lastName, mobileNumber, dateOfBirth, gender, email 
+                    FROM donor WHERE registrationNumber = ?;"""
+                    if query is None:
+                        raise Exception("User Does not exists")
+                elif 'REC' in record:
+                    query = """SELECT firstName, middleName, lastName, mobileNumber, dateOfBirth, gender, email, 
+                    priority FROM receiver WHERE registrationNumber = ?;"""
+                    if query is None:
+                        raise Exception("User Does not exists")
+                else:
+                    raise Exception("Invalid Record ID type")
+                self.cursor.execute(query, (record,))
+                data = self.cursor.fetchall()
+                data = list(data)
+        except Exception as e:
+            print(e)
+
+    def __del__(self):
+        self.connection.commit()
+        self.connection.close()
+
 
 class add_sucess(QtWidgets.QWidget):
     def __init__(self):
@@ -322,7 +345,6 @@ class add_sucess(QtWidgets.QWidget):
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-
         buttonReply = QtWidgets.QMessageBox.question(self, 'Registered Successfully', "Want to register another?",
                                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if buttonReply == QMessageBox.Yes:
@@ -331,18 +353,83 @@ class add_sucess(QtWidgets.QWidget):
             return False
 
 
-class forgot(QtWidgets.QDialog):
+def password_reset():
+    test = forgot()
+
+
+def delete_record():
+    test1 = noise()
+
+
+def update_record():
+    pass
+
+
+class noise(QtWidgets.QWidget):
     def __init__(self, parent=None):
-         super(forgot, self).__init__(parent)
-         layout = QVBoxLayout()
-         self.b1 = QPushButton("Button1")
-         self.b1.setCheckable(True)
-         self.b1.toggle()
-         self.b1.clicked.connect(lambda: self.whichbtn(self.b1))
-         self.b1.clicked.connect(self.btnstate)
-         layout.addWidget(self.b1)
+        super(noise, self).__init__(parent)
+        layout = QtWidgets.QVBoxLayout()
+        self.setWindowTitle("Delete Record")
+        self.setGeometry(300, 300, 300, 200)
+        self.l1 = QtWidgets.QLabel("Confirm delete Record")
+        self.l2 = QtWidgets.QLabel("State reason to delete Record")
+        layout.addWidget(self.l1)
+        layout.addWidget(self.l2)
+        self.setLayout(layout)
+        self.show()
+
+    def btnstate(self):
+        pass
 
 
+class forgot(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        super(forgot, self).__init__(parent)
+        layout = QtWidgets.QVBoxLayout()
+        self.setWindowTitle("Forgot Password")
+        self.setGeometry(100, 100, 100, 100)
+        self.b1 = QtWidgets.QPushButton("OK")
+        self.b1.setCheckable(True)
+        self.b1.toggle()
+        self.b1.clicked.connect(lambda: self.whichbtn(self.b1))
+        self.b1.clicked.connect(self.btnstate)
+        self.l1 = QtWidgets.QLabel("Enter your First Name")
+        self.l2 = QtWidgets.QLabel("Enter your Mobile Number")
+        self.le1 = QtWidgets.QLineEdit()
+        self.le2 = QtWidgets.QLineEdit()
+        layout.addWidget(self.l1)
+        layout.addWidget(self.le1)
+        layout.addWidget(self.l2)
+        layout.addWidget(self.le2)
+        layout.addWidget(self.b1)
+        self.userlabel = QtWidgets.QLabel("UserName:")
+        self.password = QtWidgets.QLabel("Password")
+        self.value1 = QtWidgets.QLabel()
+        self.value2 = QtWidgets.QLabel()
+        self.value1.setText(verif[0])
+        self.value2.setText(verif[1])
+        layout.addWidget(self.userlabel)
+        layout.addWidget(self.value1)
+        layout.addWidget(self.password)
+        layout.addWidget(self.value2)
+        self.setLayout(layout)
+        self.show()
+
+    def verify(self, fname, number):
+        connection = sqlite3.connect('organRecord.db')
+        cursor = connection.cursor()
+        query = """SELECT loginId.userName,loginId.password FROM loginId INNER JOIN donor        
+                ON loginId.userName=donor.registrationNumber
+                WHERE donor.firstName=? and donor.mobileNumber = ?;"""
+        cursor.execute(query, (fname, number))
+        return cursor.fetchall()
+
+    def btnstate(self):
+        ant = self.verify(fname, number)
+        if ant is not none:
+
+    def whichbtn(self,x):
+        pass
 
 app = QtWidgets.QApplication(sys.argv)
 win = Test()
