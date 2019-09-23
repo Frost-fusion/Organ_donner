@@ -326,7 +326,7 @@ class Test:
                 self.cursor.execute(query, (record,))
                 data = self.cursor.fetchall()
                 for i in data:
-                    self.ui.adminTabName.setText(i[0] + i[1] + i[2])
+                    self.ui.adminTabName.setText(i[0] + ' ' + i[1] + ' ' + i[2])
                     self.ui.adminTabNumber.setText(i[3])
                     self.ui.adminTabDob.setText(i[4])
                     self.ui.adminTabGender.setText(i[5])
