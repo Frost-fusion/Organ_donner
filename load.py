@@ -3,8 +3,9 @@ import re
 import sqlite3
 import sys
 
-from PyQt5.QtWidgets import QMessageBox, QVBoxLayout
+from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtWidgets, uic
+from PyQt5 import QtGui
 
 
 class Test:
@@ -18,6 +19,8 @@ class Test:
         self.ui.changeLoginTypeStack.setCurrentIndex(0)
         self.ui.changeFormStack.setCurrentIndex(0)
         self.ui.adminLoginStackTab.setCurrentIndex(0)
+        self.perform_table_sizeing()
+        self.about_tab()
         self.ui.loginButton.clicked.connect(self.login)
         self.ui.homeTabRegisterButton.clicked.connect(self.tab_change)
         self.ui.formSelecter.currentIndexChanged.connect(self.change_form)
@@ -30,7 +33,7 @@ class Test:
         self.ui.adminLoginStackTab.currentChanged.connect(self.populate_record)
         self.ui.searchRecord.clicked.connect(self.admin_populate)
         self.ui.deleteRecord.clicked.connect(delete_record)
-        self.ui.updateRecord.clicked.connect(update_record)
+        self.ui.updateRecord.clicked.connect(self.update_record)
 
     def login(self):
         user_name: str
@@ -305,7 +308,7 @@ class Test:
     def admin_populate(self):
         try:
             if self.ui.adminRecordText.text() == '':
-                raise Exception("blackRecord")
+                raise Exception("blankRecord")
             else:
                 record = self.ui.adminRecordText.text()
                 if 'DON' in record:
@@ -322,9 +325,36 @@ class Test:
                     raise Exception("Invalid Record ID type")
                 self.cursor.execute(query, (record,))
                 data = self.cursor.fetchall()
-                data = list(data)
+                for i in data:
+                    self.ui.adminTabName.setText(i[0] + i[1] + i[2])
+                    self.ui.adminTabNumber.setText(i[3])
+                    self.ui.adminTabDob.setText(i[4])
+                    self.ui.adminTabGender.setText(i[5])
+                    self.ui.adminTabEmail.setText(i[6])
+                    if len(i) == 8:
+                        self.ui.adminTabPriority.setCurrentText(i[7])
         except Exception as e:
-            print(e)
+            do = mesa()
+            do.call(str(e))
+
+    def perform_table_sizeing(self):
+        self.ui.receiverLoginStackTable.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.ui.receiverLoginStackTable.resizeColumnsToContents()
+        self.ui.adminLoginStackDonorTable.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.ui.adminLoginStackDonorTable.resizeColumnsToContents()
+        self.ui.adminLoginStackReceiverTable.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.ui.adminLoginStackReceiverTable.resizeColumnsToContents()
+
+    def about_tab(self):
+        image = QtGui.QPixmap('about_image.jpg')
+        image = image.scaled(400, 400)
+        self.ui.aboutImage.setPixmap(image)
+        txt = "Copyright \u00A9 2019 CSE 3rd year corporation.\n All rights reserved."
+        self.ui.copyright.setText(txt)
+
+    def update_record(self):
+        priority = None
+        query = """select """
 
     def __del__(self):
         self.connection.commit()
@@ -361,10 +391,6 @@ def delete_record():
     test1 = noise()
 
 
-def update_record():
-    pass
-
-
 class noise(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super(noise, self).__init__(parent)
@@ -373,12 +399,18 @@ class noise(QtWidgets.QWidget):
         self.setGeometry(300, 300, 300, 200)
         self.l1 = QtWidgets.QLabel("Confirm delete Record")
         self.l2 = QtWidgets.QLabel("State reason to delete Record")
+        self.b1 = QtWidgets.QPushButton("Ok")
+        self.b1.clicked.connect(self.som)
         layout.addWidget(self.l1)
         layout.addWidget(self.l2)
+        layout.addWidget(self.b1)
         self.setLayout(layout)
         self.show()
 
-    def btnstate(self):
+    def som(self):
+        pass
+
+    def __del__(self):
         pass
 
 
@@ -391,8 +423,7 @@ class forgot(QtWidgets.QWidget):
         self.b1 = QtWidgets.QPushButton("OK")
         self.b1.setCheckable(True)
         self.b1.toggle()
-        self.b1.clicked.connect(lambda: self.whichbtn(self.b1))
-        self.b1.clicked.connect(self.btnstate)
+        self.b1.clicked.connect(lambda: self.verify())
         self.l1 = QtWidgets.QLabel("Enter your First Name")
         self.l2 = QtWidgets.QLabel("Enter your Mobile Number")
         self.le1 = QtWidgets.QLineEdit()
@@ -406,8 +437,8 @@ class forgot(QtWidgets.QWidget):
         self.password = QtWidgets.QLabel("Password")
         self.value1 = QtWidgets.QLabel()
         self.value2 = QtWidgets.QLabel()
-        self.value1.setText(verif[0])
-        self.value2.setText(verif[1])
+        self.value1.setText('')
+        self.value2.setText('')
         layout.addWidget(self.userlabel)
         layout.addWidget(self.value1)
         layout.addWidget(self.password)
@@ -415,21 +446,41 @@ class forgot(QtWidgets.QWidget):
         self.setLayout(layout)
         self.show()
 
-    def verify(self, fname, number):
+    def verify(self):
         connection = sqlite3.connect('organRecord.db')
         cursor = connection.cursor()
         query = """SELECT loginId.userName,loginId.password FROM loginId INNER JOIN donor        
                 ON loginId.userName=donor.registrationNumber
                 WHERE donor.firstName=? and donor.mobileNumber = ?;"""
+        fname = self.le1.text()
+        number = self.le2.text()
         cursor.execute(query, (fname, number))
-        return cursor.fetchall()
+        check = cursor.fetchall()
+        if check is not None:
+            for i in check:
+                self.value1.setText(str(i[0]))
+                self.value2.setText(str(i[1]))
+        connection.close()
 
-    def btnstate(self):
-        ant = self.verify(fname, number)
-        if ant is not none:
-
-    def whichbtn(self,x):
+    def __del__(self):
         pass
+
+
+class mesa(QtWidgets.QWidget):
+    def __init__(self, parent=None):
+        super(mesa, self).__init__(parent)
+        layout = QtWidgets.QVBoxLayout()
+        self.setLayout(layout)
+
+    def call(self, e):
+        choice = QtWidgets.QMessageBox.question(self, 'Warning', e,
+                                                QtWidgets.QMessageBox.Ok)
+        if choice == QtWidgets.QMessageBox.Yes:
+            print("Extracting Naaaaaaoooww!!!!")
+            sys.exit()
+        else:
+            pass
+
 
 app = QtWidgets.QApplication(sys.argv)
 win = Test()
