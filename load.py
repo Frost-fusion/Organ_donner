@@ -5,7 +5,11 @@ import sys
 
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtWidgets, uic
-from PyQt5 import QtGui
+from PyQt5 import QtGui,QtCore
+
+
+def delete_record():
+    noise()
 
 
 class Test:
@@ -29,11 +33,9 @@ class Test:
         self.ui.goToLoginPageReceiver.clicked.connect(self.set_login_page)
         self.ui.goToLoginPageDonor.clicked.connect(self.set_login_page)
         self.ui.goToLoginPageAdmin.clicked.connect(self.set_login_page)
-        self.ui.forgotPasswordButton.clicked.connect(password_reset)
         self.ui.adminLoginStackTab.currentChanged.connect(self.populate_record)
         self.ui.searchRecord.clicked.connect(self.admin_populate)
         self.ui.deleteRecord.clicked.connect(delete_record)
-        self.ui.updateRecord.clicked.connect(self.update_record)
 
     def login(self):
         user_name: str
@@ -183,12 +185,16 @@ class Test:
             self.cursor.execute(query, data)
             self.connection.commit()
             self.ui.statusbar.showMessage("Added Record")
-            response = add_sucess()
+            word = data[1]
+            word2 = data[2]
+            word = word[2:5] + word2[2:5]
+            response = add_sucess(registration_number, word)
+            self.add_login_id(registration_number, word)
             if response:
                 self.renew_application()
         if self.ui.formSelecter.currentIndex() == 1:
             data = []
-            registration_number = 'DON1'
+            registration_number = 'REC1'
             self.cursor.execute("select registrationNumber from receiver;")
             if self.cursor.fetchone():
                 self.cursor.execute("select registrationNumber from receiver ORDER BY registrationNumber DESC LIMIT 1;")
@@ -228,15 +234,20 @@ class Test:
                         priority, transplantingOrgan) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"""
             self.cursor.execute(query, data)
             self.connection.commit()
-            response = add_sucess()
+            word = data[1]
+            word2 = data[2]
+            word = word[2:5] + word2[2:5]
+            response = add_sucess(registration_number, word)
+            self.add_login_id(registration_number, word)
             if response:
                 self.renew_application()
 
     def change_form(self):
         self.ui.changeFormStack.setCurrentIndex(self.ui.formSelecter.currentIndex())
 
-    def add_login_id(self, registration):
-        pass
+    def add_login_id(self, registration, word):
+        query =  """insert into loginId (userName, password) values(?,?);"""
+        self.cursor.execute(query,(registration, word))
 
     def populate_record(self):
         try:
@@ -266,7 +277,7 @@ class Test:
 
     def populate_receiver(self, user_id):
         try:
-            query = """select registrationNumber,priority,bloodGroup,doctorName from receiver;"""
+            query = """select registrationNumber,transplantingOrgan,priority,bloodGroup,doctorName from receiver;"""
             self.cursor.execute(query)
             waiting_table = self.cursor.fetchall()
             required_rows = len(waiting_table)
@@ -276,6 +287,20 @@ class Test:
                 x = x + 1
                 for j in range(0, 5):
                     self.ui.receiverLoginStackTable.setItem(x, j, QtWidgets.QTableWidgetItem(i[j]))
+            query = """select transplantingOrgan from receiver where registrationNumber=?; """
+            self.cursor.execute(query,(user_id,))
+            value = self.cursor.fetchall()
+            query = """select registrationNumber from receiver where transplantingOrgan=?;"""
+            self.cursor.execute(query,value[0])
+            organ = self.cursor.fetchall()
+            count = 1
+            for i in organ:
+                if i[0] is None:
+                    continue
+                elif i[0] == user_id:
+                    self.ui.place.setText(str(count))
+                else:
+                    count = count + 1
         except Exception as e:
             print(e)
 
@@ -283,14 +308,14 @@ class Test:
         self.ui.fristName.clear()
         self.ui.middleName.clear()
         self.ui.lastName.clear()
-        self.ui.bloodGroup.clear()
+        self.ui.bloodGroup.setCurrentIndex(0)
         self.ui.mobileNumber.clear()
         self.ui.landLineNumber.clear()
         self.ui.email.clear()
         self.ui.permanantAddress.clear()
         self.ui.addCity.clear()
-        self.ui.addState.clear()
-        self.ui.addDistrict.setCurrentIndex(0)
+        self.ui.addState.setCurrentIndex(0)
+        self.ui.addDistrict.clear()
         self.ui.addPincode.clear()
         self.ui.patientDisease.clear()
         self.ui.doctorName.clear()
@@ -352,43 +377,36 @@ class Test:
         txt = "Copyright \u00A9 2019 CSE 3rd year corporation.\n All rights reserved."
         self.ui.copyright.setText(txt)
 
-    def update_record(self):
-        priority = None
-        query = """select """
-
     def __del__(self):
         self.connection.commit()
         self.connection.close()
 
 
 class add_sucess(QtWidgets.QWidget):
-    def __init__(self):
+    def __init__(self, name, word):
         super().__init__()
         self.title = 'ODMS'
         self.left = 300
         self.top = 300
         self.width = 320
         self.height = 200
-        self.initUI()
+        self.initUI(name, word)
         self.show()
 
-    def initUI(self):
+    def initUI(self, user, password):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-        buttonReply = QtWidgets.QMessageBox.question(self, 'Registered Successfully', "Want to register another?",
-                                                     QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-        if buttonReply == QMessageBox.Yes:
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setText("Record Added Sucessfully\n Do you want to add another")
+        msg.setInformativeText("USERNAME:" + user + "\nPASSWORD"+ password)
+        msg.setWindowTitle("Record Added")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        buttonreply = msg.exec_()
+        if buttonreply == QMessageBox.Yes:
             return True
         else:
             return False
-
-
-def password_reset():
-    test = forgot()
-
-
-def delete_record():
-    test1 = noise()
 
 
 class noise(QtWidgets.QWidget):
@@ -414,58 +432,6 @@ class noise(QtWidgets.QWidget):
         pass
 
 
-class forgot(QtWidgets.QWidget):
-    def __init__(self, parent=None):
-        super(forgot, self).__init__(parent)
-        layout = QtWidgets.QVBoxLayout()
-        self.setWindowTitle("Forgot Password")
-        self.setGeometry(100, 100, 100, 100)
-        self.b1 = QtWidgets.QPushButton("OK")
-        self.b1.setCheckable(True)
-        self.b1.toggle()
-        self.b1.clicked.connect(lambda: self.verify())
-        self.l1 = QtWidgets.QLabel("Enter your First Name")
-        self.l2 = QtWidgets.QLabel("Enter your Mobile Number")
-        self.le1 = QtWidgets.QLineEdit()
-        self.le2 = QtWidgets.QLineEdit()
-        layout.addWidget(self.l1)
-        layout.addWidget(self.le1)
-        layout.addWidget(self.l2)
-        layout.addWidget(self.le2)
-        layout.addWidget(self.b1)
-        self.userlabel = QtWidgets.QLabel("UserName:")
-        self.password = QtWidgets.QLabel("Password")
-        self.value1 = QtWidgets.QLabel()
-        self.value2 = QtWidgets.QLabel()
-        self.value1.setText('')
-        self.value2.setText('')
-        layout.addWidget(self.userlabel)
-        layout.addWidget(self.value1)
-        layout.addWidget(self.password)
-        layout.addWidget(self.value2)
-        self.setLayout(layout)
-        self.show()
-
-    def verify(self):
-        connection = sqlite3.connect('organRecord.db')
-        cursor = connection.cursor()
-        query = """SELECT loginId.userName,loginId.password FROM loginId INNER JOIN donor        
-                ON loginId.userName=donor.registrationNumber
-                WHERE donor.firstName=? and donor.mobileNumber = ?;"""
-        fname = self.le1.text()
-        number = self.le2.text()
-        cursor.execute(query, (fname, number))
-        check = cursor.fetchall()
-        if check is not None:
-            for i in check:
-                self.value1.setText(str(i[0]))
-                self.value2.setText(str(i[1]))
-        connection.close()
-
-    def __del__(self):
-        pass
-
-
 class mesa(QtWidgets.QWidget):
     def __init__(self, parent=None):
         super(mesa, self).__init__(parent)
@@ -482,6 +448,7 @@ class mesa(QtWidgets.QWidget):
             pass
 
 
-app = QtWidgets.QApplication(sys.argv)
-win = Test()
-sys.exit(app.exec_())
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    win = Test()
+    sys.exit(app.exec_())
