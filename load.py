@@ -399,7 +399,7 @@ class add_sucess(QtWidgets.QWidget):
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setText("Record Added Sucessfully\n Do you want to add another")
-        msg.setInformativeText("USERNAME:" + user + "\nPASSWORD"+ password)
+        msg.setInformativeText("USERNAME: " + user + "\nPASSWORD: " + password)
         msg.setWindowTitle("Record Added")
         msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         buttonreply = msg.exec_()

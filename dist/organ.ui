@@ -1,0 +1,1467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>837</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Organ Donation Management System</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="mainTab">
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="homeTab">
+       <attribute name="title">
+        <string>&amp;Home</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="1">
+         <widget class="QPushButton" name="homeTabRegisterButton">
+          <property name="text">
+           <string>Register</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <spacer name="registerButtonRightSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="0" colspan="3">
+         <widget class="QTextBrowser" name="textBrowser">
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot; align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Every day almost 18 people die waiting for organs such as heart,lungs,liver,kidney and tissues.&lt;/li&gt;&lt;/ul&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot; align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A single donor can save the life of 8 people and provide tissues for 7.5 others.&lt;/li&gt;&lt;/ul&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot; align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Organ donation is considered as charitable act and global deed.&lt;/li&gt;&lt;/ul&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot; align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Organ donors are needed to save thousands of lives every year.&lt;/li&gt;&lt;/ul&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot; align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Agreeing to donate organ does not affect the quality of care of a person receives.&lt;/li&gt;&lt;/ul&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:14pt; font-weight:600;&quot;&gt;What organs can be transplanted:&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt;♦Liver 		♦Heart 		♦Cornea&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt;♦Lung		♦ Intestine 	♦Pancreas&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt;♦Kidney&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif';&quot;&gt;  &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif';&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-weight:600;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:14pt; font-weight:600;&quot;&gt;Who can be an organ donor?&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt;People of all ages should consider themselves potential donor.When a person dies,he or she is evaluated for donor suitability based on their medical history and age.Anyone younger than 18 needs to have thye agreement of a parent or guardian to be a donor.Having a serious condition like actively spreading cancer,HIV,diabetes,kidney disease,or heart disease can prevent you from donating as a living donor.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt;In life,there are consequences...if we choose to harm ourselves because we were mindless of what could happen later,then at-least let's face the outcome....&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Verdana,sans-serif'; font-size:12pt;&quot;&gt;....Many patients died due to an illness they didn't ask for while waiting to have a organ transplant.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <spacer name="registerButtonLeftSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="registerTab">
+       <attribute name="title">
+        <string>&amp;Register</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="fristName">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1" colspan="2">
+         <widget class="QLabel" name="registerTabDateLabel">
+          <property name="text">
+           <string>Date of Birth:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="5" colspan="2">
+         <widget class="QComboBox" name="addState">
+          <item>
+           <property name="text">
+            <string>-</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Andhra Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Arunachal Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Assam</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Bihar</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Chhattisgarh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Goa</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Gujarat</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Haryana</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Himachal Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Jharkhand</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Karnataka</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kerala</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Madhya Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Maharashtra</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Manipur</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Meghalaya</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mizoram</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nagaland</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Odisha</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Punjab</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Rajasthan</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sikkm</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Tamil Nadu</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Telangana</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Tripura</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Uttar Pradesh</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Uttarkhand</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>West Bengal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLabel" name="registerTabBloodGroupLabel">
+          <property name="text">
+           <string>Blood Group:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QRadioButton" name="radioFemale">
+          <property name="text">
+           <string>Female</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLabel" name="registerTabCityLabel">
+          <property name="text">
+           <string>City:       </string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="3">
+         <widget class="QLineEdit" name="addDistrict"/>
+        </item>
+        <item row="1" column="5" colspan="2">
+         <widget class="QLineEdit" name="lastName"/>
+        </item>
+        <item row="1" column="4">
+         <widget class="QLineEdit" name="middleName"/>
+        </item>
+        <item row="2" column="3">
+         <widget class="QDateEdit" name="dateOfBirth"/>
+        </item>
+        <item row="1" column="1" colspan="2">
+         <widget class="QLabel" name="registerTabNameLabel">
+          <property name="text">
+           <string>Name of Donor:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QRadioButton" name="radioMale">
+          <property name="text">
+           <string>Male</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLabel" name="registerTabEmailLabel">
+          <property name="text">
+           <string>Email Id:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLabel" name="registerTabMobileLabel">
+          <property name="text">
+           <string>Mobile No.:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="4">
+         <widget class="QLabel" name="registerTabLandlineLabel">
+          <property name="text">
+           <string>LandLine No.:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="registerTabContactLabel">
+          <property name="text">
+           <string>Contact Details:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="3" colspan="2">
+         <widget class="QLineEdit" name="email"/>
+        </item>
+        <item row="11" column="5" colspan="2">
+         <widget class="QLineEdit" name="addPincode"/>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLabel" name="registerTabAddressLabel">
+          <property name="text">
+           <string>Permanent Address:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="4">
+         <widget class="QLabel" name="registerTabPincodeLabel">
+          <property name="text">
+           <string>Pin Code:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="3" colspan="2">
+         <widget class="QPlainTextEdit" name="permanantAddress">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>50</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="5">
+         <widget class="QRadioButton" name="radioOther">
+          <property name="text">
+           <string>Other</string>
+          </property>
+         </widget>
+        </item>
+        <item row="18" column="0" colspan="7">
+         <widget class="QStackedWidget" name="changeFormStack">
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="donorOrganForm">
+           <layout class="QGridLayout" name="gridLayout_7">
+            <item row="3" column="1">
+             <widget class="QCheckBox" name="donateHeart">
+              <property name="text">
+               <string>Heart</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QCheckBox" name="donateLiver">
+              <property name="text">
+               <string>Liver</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QCheckBox" name="donateKidney">
+              <property name="text">
+               <string>Kidney</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QCheckBox" name="donatePancreas">
+              <property name="text">
+               <string>Pancreas</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="donarLabelBody">
+              <property name="text">
+               <string>Organs willed to Donate:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <widget class="QCheckBox" name="donateEyes">
+              <property name="text">
+               <string>Eyes</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="2">
+             <widget class="QCheckBox" name="donateLungs">
+              <property name="text">
+               <string>Lungs</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1" colspan="2">
+             <widget class="QCheckBox" name="donateBody">
+              <property name="text">
+               <string>Everything that can save a life</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="donarLabelOr">
+              <property name="text">
+               <string>or</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="patientOrganForm">
+           <layout class="QGridLayout" name="gridLayout_8">
+            <item row="1" column="3">
+             <widget class="QLineEdit" name="doctorRegistration"/>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="illnessStage">
+              <item>
+               <property name="text">
+                <string>-</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Stage 1</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Stage 2</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Hospitilized</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="patientFormStageLabel">
+              <property name="text">
+               <string>Stage of illness:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2">
+             <widget class="QLabel" name="patienFormPriorityLabel">
+              <property name="text">
+               <string>Priority of patient</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QLabel" name="patientFormDoctorLabel">
+              <property name="text">
+               <string>Doctor reg no.:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="patientFormDiseaselabel">
+              <property name="text">
+               <string>Disease of the patient:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="patientFormMedicalLabel">
+              <property name="text">
+               <string>Examining Medical Consultant:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="3">
+             <widget class="QComboBox" name="patientPriority">
+              <item>
+               <property name="text">
+                <string>-</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>recommended</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>waiting</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Immediate</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="doctorName"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="patientFormTransplantLabel">
+              <property name="text">
+               <string>Organ required to be transplanted:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QComboBox" name="transplantOrgan">
+              <item>
+               <property name="text">
+                <string>-</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Heart</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Lungs</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Liver</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Pancres</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Eyes</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>Kidneys</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="0" column="1" colspan="3">
+             <widget class="QLineEdit" name="patientDisease"/>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="registerTabFormSelecterLabel">
+          <property name="text">
+           <string>Form to be filled by:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="11" column="1">
+         <widget class="QLabel" name="registerTabDistrictLabel">
+          <property name="text">
+           <string>District:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="3">
+         <widget class="QLineEdit" name="addCity"/>
+        </item>
+        <item row="4" column="3">
+         <widget class="QComboBox" name="bloodGroup">
+          <item>
+           <property name="text">
+            <string>A+</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>A-</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>B+</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>B-</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>AB+</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>AB-</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>O+</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>O-</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QLineEdit" name="mobileNumber"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="registerTabPersonalLabel">
+          <property name="text">
+           <string>Personal Details:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="4">
+         <widget class="QLabel" name="registerTabStateLabel">
+          <property name="text">
+           <string>State:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QComboBox" name="formSelecter">
+          <item>
+           <property name="text">
+            <string>Donor</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Receiver</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLabel" name="registerTabGenderLabel">
+          <property name="text">
+           <string>Gender:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="5" colspan="2">
+         <widget class="QLineEdit" name="landLineNumber"/>
+        </item>
+        <item row="19" column="2" colspan="2">
+         <widget class="QPushButton" name="registerTabRegisterButton">
+          <property name="text">
+           <string>Register</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="renewApplicationButton">
+          <property name="text">
+           <string>New Form</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="loginTab">
+       <attribute name="title">
+        <string>&amp;Login</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <widget class="QStackedWidget" name="changeLoginTypeStack">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="currentIndex">
+           <number>1</number>
+          </property>
+          <widget class="QWidget" name="loginWindow">
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="1" column="1">
+             <widget class="QLabel" name="userPasswordLabel">
+              <property name="text">
+               <string>Password:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="4">
+             <spacer name="loginStackRightSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>217</width>
+                <height>14</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="4">
+             <widget class="QLabel" name="statusPasswordLabel">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QLabel" name="statusNameLabel">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <spacer name="LoginStackLeftSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>164</width>
+                <height>17</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="userNameLabel">
+              <property name="text">
+               <string>User Name:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="2">
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>127</width>
+                <height>361</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="2" colspan="2">
+             <widget class="QLineEdit" name="userName"/>
+            </item>
+            <item row="1" column="2" colspan="2">
+             <widget class="QLineEdit" name="userPassword">
+              <property name="echoMode">
+               <enum>QLineEdit::Password</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="2" colspan="2">
+             <widget class="QPushButton" name="loginButton">
+              <property name="text">
+               <string>Login</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="adminLoginStack">
+           <layout class="QGridLayout" name="gridLayout_9">
+            <item row="1" column="0">
+             <widget class="QTabWidget" name="adminLoginStackTab">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="adminLoginStackMofifyTab">
+               <attribute name="title">
+                <string>Modify Record</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_12">
+                <item row="7" column="0">
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>Priority</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLineEdit" name="adminRecordText"/>
+                </item>
+                <item row="1" column="3">
+                 <widget class="QPushButton" name="searchRecord">
+                  <property name="text">
+                   <string>Search</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_26">
+                  <property name="text">
+                   <string>Record Id:</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>Name:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="QLabel" name="label_6">
+                  <property name="text">
+                   <string>D.O.B.</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QLabel" name="label_9">
+                  <property name="text">
+                   <string>Email Id:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="1">
+                 <widget class="QComboBox" name="adminTabPriority">
+                  <item>
+                   <property name="text">
+                    <string>-</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>recommended</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>waiting</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Immediate</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="5" column="0">
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>Gender:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="3">
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>Mobile Number:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QLabel" name="adminTabName">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="1">
+                 <widget class="QLabel" name="adminTabNumber">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="1">
+                 <widget class="QLabel" name="adminTabDob">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="1">
+                 <widget class="QLabel" name="adminTabGender">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="6" column="1">
+                 <widget class="QLabel" name="adminTabEmail">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="7" column="3">
+                 <widget class="QPushButton" name="deleteRecord">
+                  <property name="text">
+                   <string>Delete</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="adminLoginStackListTab">
+               <attribute name="title">
+                <string>List Record</string>
+               </attribute>
+               <layout class="QGridLayout" name="gridLayout_13">
+                <item row="3" column="0">
+                 <widget class="QTableWidget" name="adminLoginStackReceiverTable">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <attribute name="horizontalHeaderStretchLastSection">
+                   <bool>true</bool>
+                  </attribute>
+                  <column>
+                   <property name="text">
+                    <string>REG NO.</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Frist Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Middle Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Last Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>D.O.B</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Gender</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Blood Group</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Mobile Number</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>LandLine Number</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Email Id.</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Address</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>City</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>District</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>State</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Pincode</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Disease</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Medical Consultant</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Doctor REG.</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Stage of Illness</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Priority</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Transplant Organ</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="adminLoginStackDonorLabel">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Donor Data:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QTableWidget" name="adminLoginStackDonorTable">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Ignored">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="sizeAdjustPolicy">
+                   <enum>QAbstractScrollArea::AdjustToContents</enum>
+                  </property>
+                  <attribute name="horizontalHeaderStretchLastSection">
+                   <bool>true</bool>
+                  </attribute>
+                  <column>
+                   <property name="text">
+                    <string>REG No.</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Frist Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Middle Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Sur Name</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>D.O.B</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Gender</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Blood Group </string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Mobile Number</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Landline Number</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Email Id.</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Address</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>City</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>District</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>State</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>PinCode</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Pledge Date</string>
+                   </property>
+                  </column>
+                  <column>
+                   <property name="text">
+                    <string>Donating</string>
+                   </property>
+                  </column>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="adminLoginStackReceiverLabel">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string>Receiver Data:</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QPushButton" name="goToLoginPageAdmin">
+              <property name="text">
+               <string>Log Out</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="adminLoginStackLabel">
+              <property name="text">
+               <string>ADMINISTRATOR</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="Line" name="adminLoginStacKLine">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="donorLoginStack">
+           <layout class="QGridLayout" name="gridLayout_10">
+            <item row="2" column="0">
+             <widget class="Line" name="line_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_21">
+              <property name="text">
+               <string>DONOR</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="goToLoginPageDonor">
+              <property name="text">
+               <string>Log out</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="reciverLoginStack">
+           <layout class="QGridLayout" name="gridLayout_11">
+            <item row="3" column="0">
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Position in waiting List: </string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="place"/>
+            </item>
+            <item row="2" column="0" colspan="3">
+             <widget class="QTableWidget" name="receiverLoginStackTable">
+              <property name="sizeAdjustPolicy">
+               <enum>QAbstractScrollArea::AdjustToContents</enum>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::SolidLine</enum>
+              </property>
+              <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Registration Number</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Organ to be Transplanted</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Priority</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Blood Group</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Medical Assistant</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item row="1" column="0" colspan="3">
+             <widget class="Line" name="line">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0" colspan="3">
+             <widget class="QPushButton" name="goToLoginPageReceiver">
+              <property name="text">
+               <string>Log out</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0" colspan="3">
+             <widget class="QLabel" name="label_25">
+              <property name="text">
+               <string>RECEIVER</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="aboutTab">
+       <attribute name="title">
+        <string>&amp;About</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <pointsize>25</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Organ Donation Management System(ODMS)</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignHCenter|Qt::AlignTop</set>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="aboutImage">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_10">
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Version 1.1</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="copyright">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>homeTabRegisterButton</tabstop>
+  <tabstop>textBrowser</tabstop>
+  <tabstop>formSelecter</tabstop>
+  <tabstop>fristName</tabstop>
+  <tabstop>middleName</tabstop>
+  <tabstop>lastName</tabstop>
+  <tabstop>dateOfBirth</tabstop>
+  <tabstop>radioFemale</tabstop>
+  <tabstop>radioMale</tabstop>
+  <tabstop>radioOther</tabstop>
+  <tabstop>bloodGroup</tabstop>
+  <tabstop>mobileNumber</tabstop>
+  <tabstop>landLineNumber</tabstop>
+  <tabstop>email</tabstop>
+  <tabstop>permanantAddress</tabstop>
+  <tabstop>addCity</tabstop>
+  <tabstop>addState</tabstop>
+  <tabstop>addDistrict</tabstop>
+  <tabstop>addPincode</tabstop>
+  <tabstop>donateBody</tabstop>
+  <tabstop>donateKidney</tabstop>
+  <tabstop>donatePancreas</tabstop>
+  <tabstop>donateHeart</tabstop>
+  <tabstop>donateEyes</tabstop>
+  <tabstop>donateLiver</tabstop>
+  <tabstop>donateLungs</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
